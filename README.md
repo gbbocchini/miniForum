@@ -10,6 +10,6 @@ Instalação:
 - rode o servidor: python manage.py runserver
 
 PS: gere uma "SECRET KEY" para o projeto funcionar e inclua em "settings.py". Abra um console Python e:
-import random
-result = "".join([random.choice("abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)") for i in range(50)])
-print(result)
+-import random
+-result = "".join([random.choice("abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)") for i in range(50)])
+-print(result)
