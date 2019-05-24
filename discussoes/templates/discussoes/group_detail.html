@@ -1,0 +1,48 @@
+{% extends "discussoes/group_base.html" %}
+{% block pregroup %}
+
+<div class="container-fluid text-monospace" align="center">
+    <br>
+<div class="card bg-light">
+    <div class="card-body">
+        <h2>{{group.name}}</h2>
+        <h4>Usuários: {{ group.members.count }}</h4>
+    </div>
+</div>
+</div>
+<section>
+    <br>
+    <br>
+<div class="container" align="center">
+<div class="content text-monospace col-md-12">
+    {% if user in group.members.all %}
+
+    <a href="{% url 'discussoes:leave' slug=group.slug %}" class="btn btn-outline-dark">Sair do bate boca</a>
+
+    {% else %}
+
+    <a href="{% url 'discussoes:join' slug=group.slug %}" class="btn btn-outline-dark">Entrar no bate boca</a>
+
+    {% endif %}
+</section>
+</div>
+</div>
+<br>
+<br>
+<br>
+{% endblock %}
+
+{% block group_content %}
+
+<div class="col-md-8">
+    {% if group.posts.count == 0 %}
+    <h4 class="text-monospace">Sem posts nesse bate boca :(</h4>
+    {% else %}
+         {% for post in group.posts.all %}
+            {% include "posts/_post.html" %}
+         {% endfor %}
+    {% endif %}
+</div>
+<br>
+<br>
+{% endblock %}

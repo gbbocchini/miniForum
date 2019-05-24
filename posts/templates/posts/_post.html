@@ -1,0 +1,24 @@
+<div class="card shadow p-3 mb-5 bg-white rounded">
+    <h5>{{ post.message_html }}</h5>
+    <div class="media-body">
+        <h6 class="media-heading">
+        <span class="username">
+             <a href="{% url 'posts:for_user' username=post.user.username %}"> @{{post.user.username}}</a>
+        </span>
+        <time class="time">
+            <a href="{% url 'posts:single' username=post.user.username pk=post.pk%}"></a>
+            Bate-boca:<a href="{% url 'discussoes:single' slug=post.bate_boca.slug %}">{{ post.bate_boca.slug}}</a>
+            {{ post.created_at}}
+        </time>
+        </h6>
+        <div class="media-footer">
+            {% if user.is_authenticated and post.user == user %}
+            <a href="{% url 'posts:delete' pk=post.pk %}" title="apagar" class="btn btn-outline-dark btn-sm">
+                <span class="text-danger"></span>
+                <span class="text-danger icon-label">Apagar</span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+   <br>

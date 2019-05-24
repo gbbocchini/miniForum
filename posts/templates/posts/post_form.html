@@ -1,0 +1,15 @@
+{% extends "posts/post_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block post_content %}
+<div class="container text-monospace"><br>
+<h4>Novo Post</h4>
+<form id="postForm" action="{% url 'posts:create' %}" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Postar" class="btn btn-outline-dark">
+
+</form>
+</div>
+
+{%endblock%}

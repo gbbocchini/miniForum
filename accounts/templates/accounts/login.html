@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<div class="jumbotron jumbotron-fluid border">
+<div class="container text-monospace">
+    <h1>Entrar</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-outline-dark" value="Entrar">
+    </form>
+</div>
+</div>
+{% endblock %}

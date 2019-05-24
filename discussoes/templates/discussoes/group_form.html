@@ -1,0 +1,17 @@
+{% extends "discussoes/group_base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block group_content %}
+
+<div class="text-monospace">
+    <br>
+<h4>Comece um novo bate-boca!</h4>
+    <form action="{% url 'discussoes:create' %}" method="POST">
+        {%csrf_token%}
+        {{ form|crispy }}
+    <input type="submit" class="btn btn-outline-dark" value="Começar">
+    </form>
+</div>
+
+{%endblock%}
