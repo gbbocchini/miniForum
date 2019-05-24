@@ -4,8 +4,8 @@ Um mini-forum/painel de mensagens com membros, discussões e posts em discussõe
 Instalação:
 
 - clone o projeto;
-- faça um VirtualEnv os requirements.txt;
-- navegue até "forum" (core application);
+- faça um VirtualEnv com os requirements.txt;
+- navegue até "forum" (core-application do projeto);
 - faça as migrations necessárias (python manage.py migrate, python manage.py makemigrations e python manage.py migrate novamente);
 - rode o servidor: python manage.py runserver
 
